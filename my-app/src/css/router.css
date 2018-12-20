@@ -1,0 +1,23 @@
+.ul {
+    display: flex;
+}
+
+.ul--navbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.li {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.li--navbar-item {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
