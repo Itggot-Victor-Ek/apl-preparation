@@ -1,0 +1,38 @@
+.image--bread {
+    margin: 1%;
+    transition: transform 1s;
+}
+
+.image--bread:hover {
+    transform: scale(1.1);
+}
+
+.h2--breadheader {
+    color: black;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+}
+
+.li--bread {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    align-items: center;
+    max-width: 300px;
+    min-height: 225px;
+}
+
+.ul--bread {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.p--bread {
+    color: black;
+}

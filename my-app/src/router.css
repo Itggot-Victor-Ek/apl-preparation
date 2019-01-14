@@ -1,0 +1,32 @@
+.router-link {
+    color: #ffffff;
+    margin-right: 4%;
+}
+
+.router-link:visited {
+    color: #ffffff
+}
+
+.nav--standard {
+    background-color: #df1414;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: 5%;
+}
+
+.ul--nav {
+    width: 100%;
+}
+
+li{ 
+    display:inline; 
+} 
+
+.container--main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
