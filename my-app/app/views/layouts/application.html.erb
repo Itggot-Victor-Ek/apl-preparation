@@ -7,11 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag    'application' %>
   </head>
-
   <body>
-    <%= react_component("Navigator") %>
+    <%= react_component("Navigator", { img_src: image_url("ICA-logotyp.png") }) %>
     <%= yield %>
   </body>
 </html>

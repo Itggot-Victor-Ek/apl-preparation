@@ -7,6 +7,9 @@ class Navigator extends React.Component {
     return (
       <React.Fragment>
         <nav>
+          <div className="container__img">
+            <img src={this.props.img_src} className="img__nav"/>
+          </div>
           <ul className="ul__nav">
             <li className="li__nav">
               <a className="a__nav" href="/ica/index">index</a>
@@ -23,5 +26,9 @@ class Navigator extends React.Component {
     );
   }
 }
+
+Navigator.propTypes = {
+  img_src: PropTypes.string
+};
 
 export default Navigator

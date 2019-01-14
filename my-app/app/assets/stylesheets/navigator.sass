@@ -1,19 +1,42 @@
-.a__nav
-    margin-right: 20px
-    color: white
-
-.li__nav
-    margin-top: 5%
-
 .ul__nav
     display: flex
     flex-direction: row
     list-style-type: none
-    align-content: center
     text-align: center
+    width: 100%
+    justify-content: center
+
+.li__nav
+    margin-top: 5%
+
+.a__nav
+    margin-right: 20px
+    color: white
+
+.img__nav
+    float: left
+    align-self: left
+    background-color: white
+    height: 100%
+    width: 100%
+    animation: logo-spin infinite 5s linear
+
+.container__img
+    width: 10%
+    height: min-content
+    align-self: left
 
 nav
     background-color: #EB1E06
+    max-height: 5%
     display: flex
-    justify-content: center
+    flex-direction: row
+
+@keyframes logo-spin 
+    from 
+        transform: rotate(0deg)
+  
+    to 
+        transform: rotate(360deg)
+  
 
