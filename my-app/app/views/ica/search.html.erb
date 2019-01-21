@@ -1,0 +1,5 @@
+<%@n_images = []%>
+<%@return_value[1].each do |image|%>
+    <% @n_images << {"__html" => (image_tag image, class: 'ul__img ul_img--bread')} %>
+<%end%>
+<%= react_component("Search", {bread: @return_value[0], images: @n_images}) %>

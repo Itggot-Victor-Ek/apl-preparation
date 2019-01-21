@@ -7,18 +7,18 @@ class Navigator extends React.Component {
     return (
       <React.Fragment>
         <nav>
-          <div className="container__img">
-            <img src={this.props.img_src} className="img__nav"/>
-          </div>
+            <div className="container__img">
+              <img src={this.props.img_src} className="img__nav"/>
+            </div>
           <ul className="ul__nav">
             <li className="li__nav">
-              <a className="a__nav" href="/ica/index">index</a>
+              <a className="a__nav" href="/ica/index">Home</a>
             </li>
             <li className="li__nav">
-              <a className="a__nav" href="/ica/show">show</a>
+              <a className="a__nav" href="/ica/search">Search 4 bread</a>
             </li>
             <li className="li__nav">
-              <a className="a__nav" href="/ica/show">do something else</a>
+              <a className="a__nav" href="/ica/show">login???</a>
             </li>
           </ul>
         </nav>

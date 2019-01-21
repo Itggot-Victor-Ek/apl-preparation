@@ -1,1 +1,2 @@
-<%= react_component("Show") %>
+<%img = {__html:  (image_tag @bread.name), class: 'ul__img ul_img--bread'}%>
+<%= react_component("Show", {bread: @bread, image: img}) %>

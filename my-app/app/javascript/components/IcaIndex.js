@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 class IcaIndex extends React.Component {
 
-  buildBread(data){
+  buildBread(){
 
     let list = []
     let i = 0
@@ -10,7 +10,7 @@ class IcaIndex extends React.Component {
         list.push(
             <li className="ul__li ul__li--bread">
                 <h2>{bread.name.replace(/(_|.jpg|.png)/gm, " ")} bröö</h2>
-                <a href={"/bread/" + bread.name} dangerouslySetInnerHTML={this.props.images[i]} />
+                <a href={"bread/" + bread.id} dangerouslySetInnerHTML={this.props.images[i]} />
                 <p>{bread.description}</p>
             </li>
         )
