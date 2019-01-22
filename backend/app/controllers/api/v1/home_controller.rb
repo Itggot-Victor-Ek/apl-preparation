@@ -1,5 +1,6 @@
-class HomeController < ApplicationController
-  	def show
+# frozen_string_literal: true
 
-  	end
+class Api::V1::HomeController < ApplicationController
+  def show
+  end
 end
