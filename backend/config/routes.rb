@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :home
       resources :bread_images
+      post '/bread/search', to: 'bread_images#search'
+      post '/home/search'
     end
   end
 end

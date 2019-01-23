@@ -18,7 +18,7 @@ class Home extends React.Component {
 
             let bread = res.data;
             let i = 0;
-
+            
             bread.forEach(bread => {
               temp.push(
                 <li className="ul__li ul__li--bread">

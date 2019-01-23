@@ -8,4 +8,8 @@ class Api::V1::HomeController < ApplicationController
   def index
     render json: Bread.all
   end
+
+  def search
+    render json: Bread.where("name like ?", "%#{params[:string]}%")
+  end
 end
