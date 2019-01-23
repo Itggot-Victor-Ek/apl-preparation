@@ -10,5 +10,6 @@ class Api::V1::BreadImagesController < ApplicationController
   end
 
   def show
+    render json: url_for(Bread.find(params[:id]).bread_picture)
   end
 end

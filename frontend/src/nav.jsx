@@ -1,9 +1,9 @@
 import React from "react";
 import Home from "./home.jsx"
+import Bread from "./bread.jsx"
 import "./nav.sass"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const About = () => <h2>About</h2>;
 const Users = () => <h2>Users</h2>;
 
 const AppRouter = () => (
@@ -12,7 +12,7 @@ const AppRouter = () => (
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/bread">Home</Link>
           </li>
           <li>
             <Link to="/about/">About</Link>
@@ -23,8 +23,8 @@ const AppRouter = () => (
         </ul>
       </nav>
 
-      <Route path="/" exact component={Home} />
-      <Route path="/about/" component={About} />
+      <Route path="/bread" exact component={Home} />
+      <Route path="/bread/:id" component={Bread} />
       <Route path="/users/" component={Users} />
     </div>
   </Router>
