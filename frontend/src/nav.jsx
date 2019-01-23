@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./home.jsx"
+import "./nav.sass"
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const About = () => <h2>About</h2>;
