@@ -6,7 +6,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {list: []}
+    this.state = {list: [], displayList: []}
   }
 
   buildBread = () => {
@@ -23,7 +23,7 @@ class Search extends React.Component {
               temp.push(
                 <li className="ul__li ul__li--bread">
                     <h2>{bread.name.replace(/(_|.jpg|.png)/gm, " ")} bröö</h2>
-                    <a href={"bread/" + bread.id}> 
+                    <a href={"/bread/" + bread.id}> 
                       <img src={result.data[i]} alt="bread" className="ul__img ul_img--bread"/>
                     </a>
                     <p>{bread.description}</p>
@@ -32,6 +32,7 @@ class Search extends React.Component {
               i++
             });
             this.setState({list: temp})
+            this.setState({displayList: temp})
           }
         )
       }
@@ -43,47 +44,29 @@ class Search extends React.Component {
   }
 
 
-  onSearch(e) {
-    e.preventDefault();
-    var data = this.refs.inputField.value;
-    let temp = []
-    axios.post('http://localhost:3000/api/v1/home/search', {string: data}).then(
-      res => {
-        axios.post("http://localhost:3000/api/v1/bread/search", {string: data}).then(
-          result => {
-            let bread = res.data;
-            let i = 0;
+  onSearch() {
+    let newList = this.state.list.slice();
 
-            bread.forEach(bread => {
-              temp.push(
-                <li className="ul__li ul__li--bread">
-                    <h2>{bread.name.replace(/(_|.jpg|.png)/gm, " ")} bröö</h2>
-                    <a href={"bread/" + bread.id}> 
-                      <img src={result.data[i]} alt="bread" className="ul__img ul_img--bread"/>
-                    </a>
-                    <p>{bread.description}</p>
-                </li>
-              )
-              i++
-            });
-            this.setState({list: temp})
-            this.forceUpdate()
-          } 
-        )
+    for (let i = newList.length-1; i >= 0; i--) {
+      const item = newList[i]
+      const word = item.props.children[0].props.children[0].toLowerCase();
+      if (!word.includes(this.refs.inputField.value)) {
+        newList.splice(i, 1)
       }
-    )
+    }
+    this.setState({displayList: newList})
   }
 
   render () {
     return (
       <div>
         <h1>Search for a bread</h1>
-        <form onSubmit={this.onSearch.bind(this)}>
-          <input type="text" ref="inputField" placeholder='ex: "Snooddas", "Dahls", "Bake off"'></input>
+        <form>
+          <input type="text" ref="inputField" placeholder='ex: "Snooddas", "Dahls", "Bake off"' onChange={this.onSearch.bind(this)}></input>
         </form>
 
         <ul className="ul--bread">
-          {this.state.list}
+          {this.state.displayList}
         </ul>
 
       </div>

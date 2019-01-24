@@ -23,7 +23,7 @@ class Home extends React.Component {
               temp.push(
                 <li className="ul__li ul__li--bread">
                     <h2>{bread.name.replace(/(_|.jpg|.png)/gm, " ")} bröö</h2>
-                    <a href={"bread/" + bread.id}> 
+                    <a href={"/bread/" + bread.id}> 
                       <img src={result.data[i]} alt="bread" className="ul__img ul_img--bread"/>
                     </a>
                     <p>{bread.description}</p>
