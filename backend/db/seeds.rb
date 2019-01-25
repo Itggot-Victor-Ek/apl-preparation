@@ -12,13 +12,13 @@ Dir.foreach('./db/seedImages/') do |file|
 
   @bread = Bread.create(
     name: file,
-    description: Faker::Lorem.paragraph_by_chars
+    description: Faker::Lorem.paragraph_by_chars,
+    price: rand(25..35),
+    category: 'Limpa'
   )
 
   @bread.bread_picture.attach(
     io: File.open('./db/seedImages/' + file),
     filename: file
   )
-
-  #logger.info 'File attached' if @bread.bread_picture.attached?
 end

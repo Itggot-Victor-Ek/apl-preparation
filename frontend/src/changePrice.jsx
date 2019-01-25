@@ -31,6 +31,10 @@ class Show extends React.Component {
     )
   }
 
+  submitPrice() {
+    axios.patch(`http://localhost:3000/api/v1/home/${this.state.id}`, {price: this.refs.inputField.value, id: this.state.id})
+  }
+
   render () {
     return (
       <div>
@@ -41,6 +45,10 @@ class Show extends React.Component {
           {this.state.description}
         </p>
         <h2>Pris: {this.state.price}kr</h2>
+        <form onSubmit={this.submitPrice.bind(this)}>
+          <input type="text" ref="inputField" placeholder='Nytt Pris:'></input>
+          <button>Send Data</button>
+        </form>
       </div>
     );
   }

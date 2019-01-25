@@ -14,6 +14,11 @@ module Api
       def search
         render json: Bread.where('name like ?', "%#{params[:string]}%")
       end
+
+      def update
+        bread = Bread.find(params[:id])
+        bread.update(price: params[:price])
+      end
     end
   end
 end
